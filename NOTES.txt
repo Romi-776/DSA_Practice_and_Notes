@@ -1,0 +1,171 @@
+"STL"
+    $ Containers:
+        - Array
+            Prop: Fixed size
+            Methods: front, back, fill, swap, size, empty
+        - Vector
+            Prop: Dynamic Size
+            Methods: same as array + clear, erase, push_back, emplace_back, pop_back
+        - Deque
+            Prop: Dynamic, Insertion and deletion both ends
+            Methods: sam as vector + pop_front, push_front
+        - Priority Queue 
+            Prop: largest element at top (logarithmic insertion and deletion)
+            Methods: top, push, pop, emplace
+        - Map 
+            Prop: Sorted key(unique) value pairs (logarithmic insertion, deletion, lookup)
+            Methods: clear, erase, insert, count, find, lower_bound, upper_bound
+        - Unordered_map
+            Prop: Not sorted and constant time insertion, deletion, lookup
+        - Multi_map
+            Prop: Same as map but not unique keys
+        - Set
+            Prop: Sorted set of unique values (logarithmic insertion, deletion, lookup)
+            Methods: same as map
+        - Unordered_set
+            Prop: Not sorted
+        - Multi_Set
+            Prop: Not unique keys but sorted
+        - Bitset
+            Prop: Fixed size sequence of n-bits and uses very less memory
+            Methods: all, any, none, count, size, set, reset, flip, + binary_operations
+
+
+
+
+    $ Algorithms:
+        - Sort (nlogn)
+            sorts the container container in ascending order (by default)
+            syntax: sort(startIterator, endIterator); 
+            syntax for descending: sort(startIterator, endIterator, greater<Type>());
+        - Reverse (n)
+            reverse the container
+            syntax: reverse(startIterator, endIterator); 
+        - max_element (n)
+            returns the iterator to the max element
+            syntax: *max_element(startIterator, endIterator);
+        - min_element (n)
+            returns the iterator to the min element
+            syntax: *min_element(startIterator, endIterator);
+        - accumulate (n)
+            returns the sum of the elements
+            syntax: accumulate(startIterator, endIterator, initialSum);
+        - count (n)
+            returns the count of the given element in the given container(or range)
+            syntax: count(startIterator, endIterator, elementToCount);
+        - find (n)
+            returns the iterator the given element else returns end 
+            syntax: find(startIterator, endIterator, elementToFind);
+        - binary_search (logn)
+            works only on SORTED containers (return true if element present else false)
+            syntax: binary_search(startIterator, endIterator, elementToFind);
+        - lower_bound (logn)
+            works only on SORTED containers (returns iterator to first element that is greater
+            than or equal to the given element)
+            syntax: lower_bound(startIterator, endIterator, element);
+        - upper_bound (logn)
+            works only on SORTED containers (returns iterator to first element that is just greater
+            than the given element)
+            syntax: upper_bound(startIterator, endIterator, element);
+        - next_permutation:
+            Permutes the range [first, last) into the next permutation, where the set of all permutations 
+            is ordered lexicographically with respect to operator< or comp. Returns true if such a 
+            "next permutation" exists; otherwise transforms the range into the lexicographically first permutation
+            syntax: next_permutation(startIterator, endIterator);
+        - prev_permutation
+            Similar to the next_permutation but different result
+
+
+
+
+    $ Some Tricks
+        - Finding the index of the element in a sorted array
+            # here, x is the element to be searched 
+            cout << (binary_search(arr, arr + n, x) ? (lower_bound(arr, arr + n, x) - arr) : -1) << endl;
+
+            // or we can do it like this
+            int index = lower_bound(arr, arr + n, x) - arr;
+
+            if (index < n and arr[index] == x)
+                cout << "Element found at: " << index << endl;
+            else
+                cout << "Element not found\n";
+
+        
+        - Finding the index of last occurrence of an element
+            auto it = upper_bound(arr, arr + n, x);
+            if (it != arr and *(--it) == x)
+                cout << "Last occurrence of " << x << " is at " << (it - arr) << endl;
+            else cout << "Element not found\n";
+
+
+        - Finding the number of occurrence of the element
+            cout << x << " occurred " << upper_bound(arr, arr + n, x) - lower_bound(arr, arr + n, x) << " times\n";
+
+
+
+
+
+
+
+
+
+
+
+
+"SORTING ALGORITHMS"
+    (SELECTION SORT)
+        Algo:
+            FIND THE SMALLEST ELEMENT IN THE UNSORTED PART OF THE ARRAY
+            AND SWAP IT WITH THE FIRST ELEMENT OF THE SORTED PART Of ARRAY
+        T.C = O(n^2) in all cases.
+        S.C = O(1) 
+        Cannot terminate the loop early even if the array is sorted.
+        Not stable
+        O(n^2) comparisons and O(n) swaps in worst case
+    
+    (Bubble sort)
+        Algo:
+            MOVE HIGHER VALUE ELEMENTS GENERALLY TO THE RIGHT AND LOWER 
+            VALUE ELEMENTS GENERALLY TO THE LEFT
+        T.C = O(n^2) worst case and Omega(n) best case 
+        S.C = O(1)
+        Can terminate the loop early if the array is sorted.
+        Stable
+        O(n^2) comparisons and O(n^2) swaps in worst case
+
+    (Insertion Sort)
+        Algo:
+            BUILD YOUR SORTED ARRAY IN PLACE, SHIFTING ELEMENTS OUT OF THE WAY IF
+            NECESSARY TO MAKE ROOM FOR THE UNSORTED ELEMENT IN THE SORTED ARRAY
+        T.C = O(n^2) worst case and Omega(n) best case 
+        S.C = O(1)
+        Can terminate the loop early if the array is sorted.
+        Stable
+        O(n^2) comparisons and O(n^2) swaps in worst case
+    
+    (Counting Sort)
+        Algo:
+            COUNT THE FREQ OF EVERY ELEMENT IN ANOTHER ARRAY
+            THEN TRAVERSE THE FREQ ARRAY AND ADD EACH ELEMENT TO THE
+            OUTPUT ARRAY WHILE DECREASING FREQ OF EACH ELEMENT
+        T.C = O(n+k) worst case and Omega(n+k) best case , k = max_element
+        S.C = O(k)
+        Stable
+    
+    (Merge Sort)
+            Algo:
+                DIVIDE THE ARRAY INTO TWO HALVES UNTIL THERE'S ONLY ONE ELEMENT 
+                IN THE SUBARRAY THEN START MERGING THE LEFT AND RIGHT HALF IN 
+                SORTED MANNER UNTIL THE WHOLE ARRAY IS SORTED
+            T.C = O(nlogn) worst case and Omega(nlogn) best case
+            S.C = O(n)
+            Stable
+
+    (Quick Sort)
+    Algo:
+        DIVIDE THE ARRAY USING SOME PARTITION WHICH CREATES TWO SUBARRAYS
+        THAT HAVE ELEMENTS EITHER LESS OR GREATER THAN THE PIVOT THEN SORT 
+        THOSE SUBARRAYS INDIVIDUALLY USING RECURSION.
+    T.C = O(n^2) worst case and Omega(nlogn) best case
+    S.C = O(1)
