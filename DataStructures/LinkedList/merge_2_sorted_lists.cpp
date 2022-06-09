@@ -1,5 +1,8 @@
 // (Pick the smallest element from both the lists and keep on making connections between them in sorted manner | O(n+m) S.C. = O(1))
 
+// T.C. = O(n+m)
+// S.C = O(1) in iterative and O(n+m) in recursive stack
+
 // Recursive function
 class Solution
 {
@@ -46,6 +49,7 @@ public:
             return list1;
 
         ListNode *ptr = list1;
+
         if (list1->val > list2->val)
         {
             ptr = list2;
