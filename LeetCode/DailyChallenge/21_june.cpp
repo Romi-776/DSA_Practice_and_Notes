@@ -1,5 +1,6 @@
 // Furthest Building You Can Reach - https://leetcode.com/problems/furthest-building-you-can-reach/
 
+// Using maxHeap
 // T.C = O(N*log(N)) S.C = O(N)
 class Solution
 {
