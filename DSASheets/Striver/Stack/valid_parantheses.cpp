@@ -6,7 +6,12 @@ class Solution
 public:
     bool isValid(string s)
     {
+        // odd brackets in the string so it cannot be balanced
+        if (st.size() & 1)
+            return false;
+
         stack<char> st;
+
 
         // iterating through all the brackets
         for (char i : s)
