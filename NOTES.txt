@@ -209,7 +209,7 @@
 
 
 "KADANE'S ALGORITHM"
-    - Used to find max subarray sum
+    -  Used to find max subarray sum
     - T.C = O(N), S.C = O(1)
     int maxSubArray(vector<int> &nums)
     {
