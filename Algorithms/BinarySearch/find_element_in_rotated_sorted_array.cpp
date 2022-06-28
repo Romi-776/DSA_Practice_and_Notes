@@ -2,7 +2,8 @@
 // then we'll simply apply the binary on both the left and right arrays)
 
 // Another approach
-int find_in_rotated_sorted_array(vector<int>& A) {
+int find_in_rotated_sorted_array(vector<int> &A)
+{
     // store the index of min_ele, i.e, no.of rotations
     // then use the following code
     // The usual binary search and accounting for rotation.
