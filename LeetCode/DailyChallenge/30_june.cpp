@@ -15,11 +15,7 @@ public:
         sort(nums.begin(), nums.end());
 
         // finding the median
-        int n = nums.size();
-        if (n & 1)
-            n /= 2;
-        else
-            n = n / 2 - 1;
+        int n = nums.size() / 2;
 
         // calculating the difference between each num and median num
         int sum = 0;
