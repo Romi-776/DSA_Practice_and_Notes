@@ -43,3 +43,33 @@ public:
         return image;
     }
 };
+
+// T.C = O(mn), S.C = O(1) if we don't consider recursive stack as external memory otherwise O(mn)
+// Approach - DFS traversal
+class Solution
+{
+    void dfs(vector<vector<int>> &image, vector<vector<bool>> &vis, int i, int j, int prevColor, int newColor)
+    {
+        // for all the cases where we don't or can't need to do anything
+        if (i < 0 or j < 0 or i >= image.size() or j >= image[0].size() or vis[i][j] == true or image[i][j] == newColor or image[i][j] != prevColor)
+            return;
+
+        // otherwise marking the current pixel with new color
+        image[i][j] = newColor;
+
+        // checking for adjacent pixels in all the 4 directions
+        dfs(image, vis, i + 1, j, prevColor, newColor);
+        dfs(image, vis, i - 1, j, prevColor, newColor);
+        dfs(image, vis, i, j + 1, prevColor, newColor);
+        dfs(image, vis, i, j - 1, prevColor, newColor);
+    }
+
+public:
+    vector<vector<int>> floodFill(vector<vector<int>> &image, int sr, int sc, int newColor)
+    {
+        int n = image.size(), m = image[0].size();
+        vector<vector<bool>> vis(n, vector<bool>(m));
+        dfs(image, vis, sr, sc, image[sr][sc], newColor);
+        return image;
+    }
+};
