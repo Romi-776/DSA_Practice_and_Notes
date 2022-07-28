@@ -229,3 +229,70 @@
         }
         return maxSubSum;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+"TREES"
+    $ Definition
+        Non-linear and a hierarchical data structure consisting of a collection of nodes such that each 
+        node of the tree stores a value, a list of references to nodes 
+
+    $ Terminology:
+        - Root Node
+            Head or starting of the tree
+
+        - Children/Parent Nodes
+            Nodes under a given node are children of the given node and the given node will be the Parent of the children nodes
+    
+        - Leaf Node or External Node
+            nodes which do not have any child nodes
+            
+        - Neighbour of a Node
+            Parent or child nodes of that node
+        
+        - Subtree
+            The current node and all the nodes under it is the Subtree of the current node
+
+        - Ancestors
+            Suppose their's a node and a node just above it is called a Ancestor as Parent and Parent of Parent is Grand Parent of that node and similarly we can go up in the hierarchy
+        
+        - Descendants
+            All the nodes under a given node are its descendants 
+        
+        - Sibling
+            children of same parent node
+
+        - internal node
+            a node with at least 1 child
+
+        - Height of a node
+            number of edges on the longest path from that node to a leaf
+        
+        - Depth of a node
+            no. of edges in between the given node and the root node
+
+        - Level 
+            each step from top to bottom is called a Level. Root node is at level 0 and levels will keep on increasing till leaf node by 1
+
+        - Degree of a node
+           total count of subtrees attached to that node
+
+    $ Binary Trees
+        - Definition
+            Each node can have at most 2 children nodes
+
+        - Types
+            1. "Full Binary Tree" - Every node either has 0 or 2 children
+            2. "Complete Binary Tree" - (a) All levels are completely filled except the last level (b) The last level has all nodes on left as possible
+            3. "Perfect Binary Tree" - All leaf nodes are at same level
+            4. "Balanced Binary Tree" - Height of the tree at max log(N)
+            5. "Degenerate Tree" - Every node has a single child node
