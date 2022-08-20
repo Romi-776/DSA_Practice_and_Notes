@@ -1,6 +1,6 @@
 // (Intuition: Taking only 3 nodes and assuming that in preorder root comes first and in inorder and postorder root comes 2nd and 3rd respectively)
 // 4. PreOrder, InOrder, PostOrder all in one Traversal
-//  add current node to stack as a pair of <node, 1> now while the stack isnt empty get the topmost node and pop it
+//  add current node to stack as a pair of <node, 1> now while the stack isn't empty get the topmost node and pop it
 //  for pre (time=1) : push into pre, incre time, push into stack, check for left, add if present
 //  for in (time=2) : push into in, incre time, push into stack, check for right, add if present
 //  for post (time=3) : just push into post

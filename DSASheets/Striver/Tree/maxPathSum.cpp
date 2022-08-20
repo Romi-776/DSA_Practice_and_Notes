@@ -26,7 +26,7 @@ class Solution
             // for max possible value of path sum
             int sum = root->val + max(l, r);
             if (sum > 0)
-                return root->val + max(l, r);
+                return sum;
         }
 
         // there's a null so returning 0

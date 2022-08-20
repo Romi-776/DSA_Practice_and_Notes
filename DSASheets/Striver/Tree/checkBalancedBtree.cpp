@@ -41,7 +41,7 @@ bool isBalanced(TreeNode *root)
 
 //   - Optimized approach (O(N))
 //   # using the concept of height of tree, while checking the total height of the tree
-//   # i'm checking that does the left or right subtree gave a reponse which occurred due
+//   # i'm checking that does the left or right subtree gave a response which occurred due
 //   # to imbalance of binary tree
 int height(TreeNode *root)
 {

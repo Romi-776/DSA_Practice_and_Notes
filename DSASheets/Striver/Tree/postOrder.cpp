@@ -1,7 +1,6 @@
 // (left, right, root)
 // 3. PostOrder Traversal
 //   - Recursive (T.C = O(N), S.C = O(N))
-//     Similar approach as above but shifting steps to left, right, and root
 
 //   # Similar to below approach we're just using an extra stack for reversal of the nodes at the end
 //   - Iterative (Using 2 stacks) (T.C = O(N), S.C = O(N))

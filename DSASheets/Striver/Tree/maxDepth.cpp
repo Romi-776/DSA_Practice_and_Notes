@@ -1,5 +1,5 @@
 // 6. Maximum Depth in Binary Tree
-//   - Using Recursion (T.C = O(N))
+//   - Using Recursion (T.C = O(N), S.C = O(H))
 int maxDepth(TreeNode *root)
 {
     if (root)
@@ -7,7 +7,7 @@ int maxDepth(TreeNode *root)
     return 0;
 }
 
-//   - Using Level Order Traversal (T.C = O(N))
+//   - Using Level Order Traversal (T.C = O(N), S.C = O(W))
 int maxDepth(TreeNode *root)
 {
     int depth = 0;

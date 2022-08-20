@@ -35,3 +35,38 @@ vector<int> preorderTraversal(TreeNode *root)
     }
     return nodes;
 }
+
+// PRE-ORDER MORRIS TRAVERSAL
+// 🌳 1st case: if left is null, print current node and go right
+// 🌳 2nd case: before going left, make right most node on left subtree connected to current node, print the curr node, then go left of curr node
+// 🌳 3rd case: if thread is already pointed to current node, then remove the thread
+
+vector<int> preorderTraversal(TreeNode *curr)
+{
+    vector<int> ans;
+    while (curr)
+    {
+        if (curr->left)
+        {
+            TreeNode *last = curr->left;
+            while (last->right and last->right != curr)
+                last = last->right;
+            if (last->right)
+            {
+                last->right = NULL;
+                curr = curr->right;
+            }
+            else
+            {
+                last->right = curr, ans.push_back(curr->val);
+                curr = curr->left;
+            }
+        }
+        else
+        {
+            ans.push_back(curr->val);
+            curr = curr->right;
+        }
+    }
+    return ans;
+}
