@@ -1,0 +1,23 @@
+
+ Case-1 : Given a Pre and Post Order traversal of a Binary tree, we cannot create a unique
+ Binary tree out of it. For ex:
+ Pre = [1,2,3], and Post = [3,2,1]
+ Both the following trees give the same result in pre and post order therefore we can't create a Unique Btree
+    1         1
+   /         /
+  2         2
+ /           \
+3             3
+
+
+
+Case-2 :  Given a Pre and In Order traversal of a Binary tree, we can create a unique Binary tree
+For Ex: Pre = [3,9,20,15,7], and In = [9,3,15,20,7] using this we can only make the below binary tree.
+    3
+   / \
+  9   20
+     /  \
+    15   7
+
+NOTE: TO CREATE A UNIQUE BINARY TREE OUT OF ITS TRAVERSALS, WE NEED INORDER AS WELL AS ANY OF THE (PRE OR POST) ORDER
+BECAUSE WE WILL NEED INFO. FOR LEFT AND RIGHT OF ANY ROOT OF A TREE.
