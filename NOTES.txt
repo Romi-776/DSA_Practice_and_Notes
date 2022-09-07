@@ -296,3 +296,14 @@
             3. "Perfect Binary Tree" - All leaf nodes are at same level
             4. "Balanced Binary Tree" - Height of the tree at max log(N)
             5. "Degenerate Tree" - Every node has a single child node
+
+    $ Binary Search Trees
+        - Definition
+            Each node in left subtrees should be lesser than root and in right it should be greater
+            i.e, 1. Left < Root < Right, 2. Left and right subtrees should also be a BST
+        
+        (Note): Ideally there shouldn't be any duplicates but can insert duplicates if we want to with some minor
+        change in the 1st condition or storing the node as <val, freq>.
+            
+        - Why BST?
+            Because it helps us search elements (in most of the cases) in O(logn) T.C.

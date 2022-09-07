@@ -28,3 +28,11 @@ TreeNode *lowestCommonAncestor(TreeNode *root, TreeNode *p, TreeNode *q)
     }
     return NULL;
 }
+
+/*
+NAIVE APPROACH:
+We can first find the path to both the nodes using any traversal
+and then by comparing them we can get to know the LCA of the two nodes.
+T.C = O(4*N) // for both the Traversals and comparing of nodes in the path
+S.C = O(4*N) // for storing the path of both the nodes and their recursive stacks
+*/
