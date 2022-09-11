@@ -307,3 +307,18 @@
             
         - Why BST?
             Because it helps us search elements (in most of the cases) in O(logn) T.C.
+
+
+
+
+
+
+
+
+
+
+
+
+"Graph"
+    One of the best post on Leetcode   
+    https://leetcode.com/problems/all-paths-from-source-to-target/discuss/986429/Python-Iterative-DFS-with-detailed-time-complexity-and-visuals
